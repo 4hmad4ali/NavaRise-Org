@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://navarise.netlify.app/</loc></url>
@@ -8,3 +9,15 @@
   <url><loc>https://navarise.netlify.app/privacy.html</loc></url>
   <url><loc>https://navarise.netlify.app/terms.html</loc></url>
 </urlset>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://navarise.netlify.app/</loc></url>
+  <url><loc>https://navarise.netlify.app/about.html</loc></url>
+  <url><loc>https://navarise.netlify.app/programs.html</loc></url>
+  <url><loc>https://navarise.netlify.app/donate.html</loc></url>
+  <url><loc>https://navarise.netlify.app/contact.html</loc></url>
+  <url><loc>https://navarise.netlify.app/privacy.html</loc></url>
+  <url><loc>https://navarise.netlify.app/terms.html</loc></url>
+</urlset>
+>>>>>>> 5e8b220 (Initial commit)
