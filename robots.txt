@@ -2,9 +2,3 @@
 User-agent: *
 Allow: /
 
-=======
-User-agent: *
-Allow: /
-
->>>>>>> 5e8b220 (Initial commit)
-Sitemap: https://navarise.netlify.app/sitemap.xml

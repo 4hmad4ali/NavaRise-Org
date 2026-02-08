@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // js/data.js
 window.NR_DATA = {
   googleForms: {
@@ -466,7 +466,6 @@ articles: [
 
 };
 /* teachers */
-=======
 // js/data.js
 window.NR_DATA = {
   googleForms: {
@@ -933,5 +932,4 @@ articles: [
 ],
 
 };
-/* teachers */
->>>>>>> 5e8b220 (Initial commit)
+
