@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -221,7 +221,7 @@
       <div>
         <h4 class="font-bold">Contact</h4>
         <ul class="mt-4 space-y-2 text-sm text-white/80">
-          <li>Phone: <span dir="ltr">+93 </span></li>
+          <li>Phone: <span dir="ltr">+93 730777233</span></li>
           <li>Email: <span dir="ltr">contact.navarise@gmail.com</span></li>
         </ul>
       </div>
@@ -259,6 +259,18 @@
   <script src="js/main.js"></script>
   <script src="js/data.js"></script>
   <script src="js/articles.js"></script>
+  <script>
+    // Mobile menu
+    const btn = document.getElementById("menuBtn");
+    const nav = document.getElementById("mobileNav");
+    if (btn && nav) {
+      btn.addEventListener("click", () => {
+        const open = !nav.classList.contains("hidden");
+        nav.classList.toggle("hidden");
+        btn.setAttribute("aria-expanded", String(!open));
+      });
+    }
+  </script>
 </body>
 </html>
 
