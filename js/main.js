@@ -1,23 +1,4 @@
 
-async function loadPartial(targetId, partialPath) {
-  const host = document.getElementById(targetId);
-  if (!host) return false;
-
-  try {
-    const res = await fetch(partialPath, { cache: "no-cache" });
-    if (!res.ok) {
-      console.error(`Failed to load ${partialPath}:`, res.status);
-      host.innerHTML = `<!-- Failed to load ${partialPath} -->`;
-      return false;
-    }
-    host.innerHTML = await res.text();
-    return true;
-  } catch (err) {
-    console.error(`Error loading ${partialPath}:`, err);
-    host.innerHTML = `<!-- Error loading ${partialPath} -->`;
-    return false;
-  }
-}
 
 function bindHeaderInteractions() {
   const btn = document.getElementById("menuBtn");
@@ -57,7 +38,7 @@ function bindHeaderInteractions() {
 }
 
 function markActiveNavLink() {
-  // Handle "/" as index.html
+ 
   const current = location.pathname.split("/").pop() || "index.html";
 
   document.querySelectorAll(".nr-navlink").forEach((a) => {
@@ -66,21 +47,4 @@ function markActiveNavLink() {
   });
 }
 
-function setFooterYear() {
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
-}
 
-document.addEventListener("DOMContentLoaded", async () => {
-  // ✅ Use RELATIVE paths (works everywhere)
-  const headerLoaded = await loadPartial("siteHeader", "partials/header.html");
-  if (headerLoaded) {
-    bindHeaderInteractions();
-    markActiveNavLink();
-  }
-
-  const footerLoaded = await loadPartial("siteFooter", "partials/footer.html");
-  if (footerLoaded) {
-    setFooterYear();
-  }
-});

@@ -23,7 +23,64 @@
 </head>
 
 <body class="nr-grid nr-wash text-slate-900">
-  <div id="siteHeader"></div>
+  
+<header class="sticky top-0 z-50 nr-header">
+  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 gap-3">
+
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center text-white rounded-lg h-9 w-9 bg-slate-900">
+          <img src="/logo.jpg" alt="">
+        </span>
+        <div class="leading-tight">
+          <div class="font-extrabold">NavaRise</div>
+          <div class="text-[11px] text-slate-500 -mt-0.5">Non-profit org</div>
+        </div>
+      </a>
+
+      <nav class="items-center hidden gap-6 text-sm md:flex text-slate-700">
+        <a class="nr-navlink" href="index.html">Home</a>
+        <a class="nr-navlink" href="about.html">About Us</a>
+        <a class="nr-navlink" href="programs.html">Education Programs</a>
+        
+        <a class="nr-navlink" href="contact.html">Contact</a>
+        <a class="nr-navlink" href="volunteer.html">Volunteer</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="donate.html"
+           class="items-center hidden gap-2 px-3 py-2 text-sm font-semibold text-white transition rounded-lg sm:inline-flex bg-slate-900 hover:bg-slate-800">
+          <span>Donate</span>
+          <span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-white/10">♥</span>
+        </a>
+
+        <button id="menuBtn"
+                class="inline-flex items-center justify-center p-2 transition rounded-lg md:hidden hover:bg-white/40"
+                aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileNav" class="hidden border-t md:hidden border-slate-200/70 bg-white/70 backdrop-blur">
+    <div class="px-4 py-4 mx-auto space-y-1 text-sm max-w-7xl">
+      <a class="block px-3 py-2 transition rounded-lg hover:bg-white/60" href="index.html">Home</a>
+      <a class="block px-3 py-2 transition rounded-lg hover:bg-white/60" href="about.html">About Us</a>
+      <a class="block px-3 py-2 transition rounded-lg hover:bg-white/60" href="programs.html">Education Programs</a>
+      <a class="block px-3 py-2 transition rounded-lg hover:bg-white/60" href="contact.html">Contact</a>
+      <a class="block px-3 py-2 transition rounded-lg hover:bg-white/60" href="volunteer.html">Volunteer</a>
+
+      <a href="donate.html"
+         class="inline-flex items-center justify-center w-full gap-2 px-3 py-2 mt-2 font-semibold text-white transition rounded-lg bg-slate-900 hover:bg-slate-800">
+        Donate ♥
+      </a>
+    </div>
+  </div>
+</header>
+
 
   <main>
     <!-- Title -->
@@ -238,10 +295,7 @@
       <div>© <span id="year">2026</span> NavaRise. All rights reserved.</div>
      <div>
     Developed by
-    <a href="https://www.linkedin.com/in/ahmad-hussaini-995042336/"
-       class="underline underline-offset-4 hover:text-white"
-       rel="noopener"
-       target="_blank">
+         
       Ahmad Ali
     </a>
   </div>
