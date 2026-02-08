@@ -235,9 +235,13 @@
       <div>© <span id="year">2026</span> NavaRise. All rights reserved.</div>
      <div>
     Developed by
-              
+               <a href="https://www.linkedin.com/in/ahmad-hussaini-995042336/"
+       class="underline underline-offset-4 hover:text-white"
+       rel="noopener"
+       target="_blank">
       Ahmad Ali
     </a>
+     
   </div>
     </div>
   </div>
@@ -247,11 +251,24 @@
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 
+
   <script>
     // Use the form link from data.js
     const url = window.NR_DATA?.googleForms?.volunteer || "#";
-    const btn = document.getElementById("volunteerApplyBtn");
-    if (btn) btn.href = url;
+    const btn1 = document.getElementById("volunteerApplyBtn");
+    if (btn1) btn.href = url;
+  </script>
+   <script>
+    // Mobile menu
+    const btn = document.getElementById("menuBtn");
+    const nav = document.getElementById("mobileNav");
+    if (btn && nav) {
+      btn.addEventListener("click", () => {
+        const open = !nav.classList.contains("hidden");
+        nav.classList.toggle("hidden");
+        btn.setAttribute("aria-expanded", String(!open));
+      });
+    }
   </script>
 </body>
 </html>

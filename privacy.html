@@ -296,6 +296,10 @@
      <div>
     Developed by
          
+      <a href="https://www.linkedin.com/in/ahmad-hussaini-995042336/"
+       class="underline underline-offset-4 hover:text-white"
+       rel="noopener"
+       target="_blank">
       Ahmad Ali
     </a>
   </div>
@@ -305,6 +309,18 @@
 
 
   <script src="js/main.js"></script>
+   <script>
+    // Mobile menu
+    const btn = document.getElementById("menuBtn");
+    const nav = document.getElementById("mobileNav");
+    if (btn && nav) {
+      btn.addEventListener("click", () => {
+        const open = !nav.classList.contains("hidden");
+        nav.classList.toggle("hidden");
+        btn.setAttribute("aria-expanded", String(!open));
+      });
+    }
+  </script>
 </body>
 </html>
 
