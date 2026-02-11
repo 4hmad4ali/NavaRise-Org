@@ -4,7 +4,10 @@ window.NR_DATA = {
     default: "https://forms.gle/PASTE-YOUR-DEFAULT-FORM-LINK",
     webinar: "https://forms.gle/PASTE-YOUR-WEBINAR-FORM-LINK",
     class: "https://forms.gle/PASTE-YOUR-CLASS-FORM-LINK",
-    volunteer: "https://forms.gle/PASTE-YOUR-VOLUNTEER-FORM-LINK"
+    volunteer: "https://forms.gle/PASTE-YOUR-VOLUNTEER-FORM-LINK",
+    MSWord: "https://forms.gle/cUKd7WjPetGqcDAb8",
+    familyand : "https://forms.gle/YVTDoBH7dDkHqBWD9",
+    QSkill :"https://forms.gle/eUQxuWgB1LivzquL9"
   },
 
   programs: [
@@ -296,22 +299,30 @@ window.NR_DATA = {
     },
 
     //  Upcoming (go to Google Form)
-  /*   {
-      slug: "webinars-more",
-      title: "More Educational Webinars (Coming Soon)",
-      type: "webinars",
-      status: "soon",
-      shortDesc: "New topics will be announced soon.",
-      form: "webinar"
-    }, */
-    /* {
-      slug: "new-class-coming-soon",
-      title: "New Class (Coming Soon)",
+     {
+      slug: "Microsoft Word",
+      title: "ICDL(Microsoft word)",
       type: "classes",
       status: "soon",
-      shortDesc: "Early registration for upcoming classes.",
-      form: "class"
-    } */
+      shortDesc: "Gain skill in making professional documents in MS Word",
+      form: "MSWord"
+    },
+    {
+      slug: "Family and Freinds",
+      title: "Family and Freinds(Starter 1,2,3)",
+      type: "classes",
+      status: "soon",
+      shortDesc: "start your English Language Jurney",
+      form: "familyand"
+    },
+    {
+      slug: "QSkill for Success",
+      title: "QSkill for Success(Intro,one,two,three",
+      type: "classes",
+      status: "soon",
+      shortDesc: "Level Up your English with Our English classes",
+      form: "QSkill"
+    }
   ],
   /* teachers */
 
