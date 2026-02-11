@@ -431,13 +431,13 @@ articles: [
    {
   slug: "how-to-start-web-development",
   title: "How to Start Web Development: A Beginner’s Roadmap",
-  category: "web",
+  category: "education",
   categoryLabel: "Web Development",
   author: "Ahmad Ali",
   date: "2026-02-05",
   readTime: "5 min",
   excerpt: "A practical beginner’s guide to starting web development, from understanding the basics to building your first real project.",
-  cover: "",
+  cover: "../images/web.png",
   content: [
     {
       type: "p",
@@ -500,13 +500,13 @@ articles: [
  {
   slug: "how-to-become-a-good-reader",
   title: "How to Become a Good Reader: Build Focus, Understanding, and Habit",
-  category: "personal",
+  category: "life skill",
   categoryLabel: "Personal Development",
   author: "Ahmad Ali",
   date: "2026-01-15",
   readTime: "4 min",
   excerpt: "Learn how to read with better focus, understand more deeply, and turn reading into a lifelong habit.",
-  cover: "",
+  cover: "../images/read.png",
   content: [
     {
       type: "p",
