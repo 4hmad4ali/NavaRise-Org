@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -8,13 +7,14 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
-<link rel="shortcut icon" href="images/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
-<link rel="manifest" href="/manifest.webmanifest">
-<meta name="theme-color" content="#0f172a">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0f172a">
 
-   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
 </head>
 
 <body class="nr-grid nr-wash text-slate-900">
- 
+
 <header class="sticky top-0 z-50 nr-header">
   <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 gap-3">
@@ -53,15 +53,15 @@
         <a href="donate.html"
            class="items-center hidden gap-2 px-3 py-2 text-sm font-semibold text-white transition rounded-lg sm:inline-flex bg-slate-900 hover:bg-slate-800">
           <span>Donate</span>
-          <span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-white/10">♥</span>
+          <span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-white/10">
+            <i data-lucide="heart" class="w-4 h-4"></i>
+          </span>
         </a>
 
         <button id="menuBtn"
                 class="inline-flex items-center justify-center p-2 transition rounded-lg md:hidden hover:bg-white/40"
                 aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+          <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
     </div>
@@ -72,131 +72,221 @@
       <a class="block px-3 py-2 transition rounded-lg hover:bg-white/60" href="index.html">Home</a>
       <a class="block px-3 py-2 transition rounded-lg hover:bg-white/60" href="about.html">About Us</a>
       <a class="block px-3 py-2 transition rounded-lg hover:bg-white/60" href="programs.html">Education Programs</a>
-    <a class="block px-3 py-2 transition rounded-lg hover:bg-white/60" href="articles.html">Learning Articles</a>
+      <a class="block px-3 py-2 transition rounded-lg hover:bg-white/60" href="articles.html">Learning Articles</a>
       <a class="block px-3 py-2 transition rounded-lg hover:bg-white/60" href="contact.html">Contact</a>
       <a class="block px-3 py-2 transition rounded-lg hover:bg-white/60" href="volunteer.html">Volunteer</a>
 
       <a href="donate.html"
          class="inline-flex items-center justify-center w-full gap-2 px-3 py-2 mt-2 font-semibold text-white transition rounded-lg bg-slate-900 hover:bg-slate-800">
-        Donate ♥
+        Donate
+        <i data-lucide="heart" class="w-4 h-4"></i>
       </a>
     </div>
   </div>
 </header>
 
+<main>
 
-  <main>
-
-  <!-- HERO SECTION -->
-  <section class="relative px-4 pt-20 pb-20 overflow-hidden">
+  <!-- HERO  -->
+  <section class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-sky-50 via-white to-white"></div>
+    <div class="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-sky-200/40 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-indigo-200/40 blur-3xl"></div>
 
-    <div class="relative mx-auto max-w-6xl text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-medium border border-sky-200 rounded-full bg-white/70 backdrop-blur text-slate-700">
-        <span class="h-2 w-2 rounded-full bg-sky-500 animate-pulse"></span>
-        Volunteer Opportunities
-      </div>
+    <div class="relative px-4 pt-20 pb-20 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div class="grid items-center gap-10 lg:grid-cols-2">
 
-      <h1 class="mt-6 text-4xl font-black tracking-tight sm:text-6xl text-slate-900">
-        Make an Impact.<br class="hidden sm:block"> 
-      </h1>
-      <h1 class="mt-6 text-4xl font-black tracking-tight sm:text-6xl text-slate-900 text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-sky-500">Become a Volunteer.</h1>
-      <p class="max-w-3xl mx-auto mt-6 text-base leading-8 text-slate-600">
-        NavaRise thrives because of passionate volunteers who believe in education, empowerment,
-        and opportunity. Join our mission and help shape brighter futures.
-      </p>
+        <!-- LEFT -->
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold rounded-full bg-white/70 backdrop-blur border border-sky-200 text-slate-700">
+            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-sky-600/10 text-sky-700">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            </span>
+            Volunteer Opportunities
+            <span class="inline-flex items-center gap-1 text-sky-700">
+              <span class="h-1.5 w-1.5 rounded-full bg-sky-500 animate-pulse"></span>
+              Open
+            </span>
+          </div>
 
-      <div class="flex flex-col items-center justify-center gap-4 mt-8 sm:flex-row">
-        <a id="volunteerApplyBtn"
-           class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white transition rounded-xl bg-slate-900 hover:bg-gradient-to-r from-sky-600 to-indigo-600"
-           href="#" target="_blank" rel="noopener">
-          Apply Now
-        </a>
+          <h1 class="mt-6 text-4xl font-black tracking-tight sm:text-6xl text-slate-900 leading-tight">
+            Make an Impact.
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-sky-500">
+              Become a Volunteer.
+            </span>
+          </h1>
 
-        <a href="contact.html"
-           class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold transition border rounded-xl border-slate-300 hover:bg-slate-100">
-          Ask a Question
-        </a>
+          <p class="max-w-2xl mx-auto mt-6 text-base leading-8 text-slate-600 lg:mx-0">
+            NavaRise thrives because of passionate volunteers who believe in education, empowerment,
+            and opportunity. Join our mission and help shape brighter futures.
+          </p>
+
+          <div class="flex flex-col items-center justify-center gap-4 mt-8 sm:flex-row lg:justify-start">
+            <a id="volunteerApplyBtn"
+               class="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white transition rounded-xl bg-slate-900 hover:bg-slate-800 shadow-sm"
+               href="#" target="_blank" rel="noopener">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              Apply Now
+            </a>
+
+            <a href="contact.html"
+               class="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition border rounded-xl border-slate-300 hover:bg-slate-100">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              Ask a Question
+            </a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap justify-center gap-3 lg:justify-start">
+            <div class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 backdrop-blur px-4 py-2 text-sm text-slate-700">
+              <i data-lucide="clock" class="w-4 h-4 text-sky-700"></i>
+              Flexible schedule
+            </div>
+            <div class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 backdrop-blur px-4 py-2 text-sm text-slate-700">
+              <i data-lucide="globe" class="w-4 h-4 text-sky-700"></i>
+              Remote & local
+            </div>
+            <div class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 backdrop-blur px-4 py-2 text-sm text-slate-700">
+              <i data-lucide="heart-handshake" class="w-4 h-4 text-sky-700"></i>
+              Real impact
+            </div>
+          </div>
+        </div>
+
+        <!--showcase card -->
+        <div class="hidden lg:block">
+          <div class="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/70 backdrop-blur shadow-xl">
+            <div class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-indigo-50"></div>
+
+            <div class="relative p-8">
+              <div class="flex items-center justify-between">
+                <div class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
+                  <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-sky-600 text-white shadow-sm">
+                    <i data-lucide="users" class="w-5 h-5"></i>
+                  </span>
+                  Volunteer Roles
+                </div>
+              </div>
+
+              <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <div class="flex items-center gap-3">
+                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-100 text-sky-700">
+                      <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                      <div class="text-sm font-extrabold text-slate-900">Teaching</div>
+                      <div class="text-xs text-slate-600">English • German</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <div class="flex items-center gap-3">
+                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-700">
+                      <i data-lucide="book-open" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                      <div class="text-sm font-extrabold text-slate-900">Test Prep</div>
+                      <div class="text-xs text-slate-600">Duolingo support</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <div class="flex items-center gap-3">
+                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
+                      <i data-lucide="laptop" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                      <div class="text-sm font-extrabold text-slate-900">Digital Skills</div>
+                      <div class="text-xs text-slate-600">ICDL • Basics</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <div class="flex items-center gap-3">
+                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-rose-100 text-rose-700">
+                      <i data-lucide="handshake" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                      <div class="text-sm font-extrabold text-slate-900">Community</div>
+                      <div class="text-xs text-slate-600">Mentor • Support</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 rounded-2xl bg-slate-900 px-6 py-5 text-white">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-sm font-extrabold">Ready to help?</div>
+                    <div class="mt-1 text-xs text-white/80">Apply in minutes via Google Form.</div>
+                  </div>
+                  <span class="inline-flex items-center justify-center h-10 w-10 rounded-2xl bg-white/10">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-
-  <!-- OPPORTUNITIES-->
+  <!-- OPPORTUNITIES -->
   <section class="px-4 pb-20 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div class="grid gap-8 sm:grid-cols-2">
 
-      <!-- Card -->
       <article class="group relative overflow-hidden rounded-3xl border bg-white p-8 shadow-sm transition duration-300 hover:shadow-xl hover:-translate-y-1">
-
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-br from-sky-50 via-white to-white"></div>
-
         <div class="relative">
-          <div class="w-14 h-14 grid place-items-center rounded-2xl bg-sky-100 text-sky-700 text-2xl shadow-sm">
-            👨🏻‍🏫
+          <div class="w-14 h-14 grid place-items-center rounded-2xl bg-sky-100 text-sky-700 shadow-sm">
+            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
           </div>
-
-          <h2 class="mt-6 text-xl font-extrabold text-slate-900">
-            English Teachers
-          </h2>
-
+          <h2 class="mt-6 text-xl font-extrabold text-slate-900">English Teachers</h2>
           <p class="mt-3 text-sm leading-7 text-slate-600">
             Teach advanced levels (B1, C1) and help students improve their communication and confidence.
           </p>
         </div>
       </article>
 
-
       <article class="group relative overflow-hidden rounded-3xl border bg-white p-8 shadow-sm transition duration-300 hover:shadow-xl hover:-translate-y-1">
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-br from-sky-50 via-white to-white"></div>
-
         <div class="relative">
-          <div class="w-14 h-14 grid place-items-center rounded-2xl bg-sky-100 text-sky-700 text-2xl shadow-sm">
-            📘
+          <div class="w-14 h-14 grid place-items-center rounded-2xl bg-sky-100 text-sky-700 shadow-sm">
+            <i data-lucide="book-open" class="w-6 h-6"></i>
           </div>
-
-          <h2 class="mt-6 text-xl font-extrabold text-slate-900">
-            Duolingo Prep Instructors
-          </h2>
-
+          <h2 class="mt-6 text-xl font-extrabold text-slate-900">Duolingo Prep Instructors</h2>
           <p class="mt-3 text-sm leading-7 text-slate-600">
             Provide guidance, practice strategies, and structured plans to help students succeed.
           </p>
         </div>
       </article>
 
-
       <article class="group relative overflow-hidden rounded-3xl border bg-white p-8 shadow-sm transition duration-300 hover:shadow-xl hover:-translate-y-1">
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-br from-sky-50 via-white to-white"></div>
-
         <div class="relative">
-          <div class="w-14 h-14 grid place-items-center rounded-2xl bg-sky-100 text-sky-700 text-2xl shadow-sm">
-            💻
+          <div class="w-14 h-14 grid place-items-center rounded-2xl bg-sky-100 text-sky-700 shadow-sm">
+            <i data-lucide="laptop" class="w-6 h-6"></i>
           </div>
-
-          <h2 class="mt-6 text-xl font-extrabold text-slate-900">
-            ICDL Computer Skills Instructors
-          </h2>
-
+          <h2 class="mt-6 text-xl font-extrabold text-slate-900">ICDL Computer Skills Instructors</h2>
           <p class="mt-3 text-sm leading-7 text-slate-600">
             Teach digital literacy and essential computer skills to empower youth for the modern world.
           </p>
         </div>
       </article>
 
-
       <article class="group relative overflow-hidden rounded-3xl border bg-white p-8 shadow-sm transition duration-300 hover:shadow-xl hover:-translate-y-1">
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-br from-sky-50 via-white to-white"></div>
-
         <div class="relative">
-          <div class="w-14 h-14 grid place-items-center rounded-2xl bg-sky-100 text-sky-700 text-2xl shadow-sm">
-            👩🏻‍🏫
+          <div class="w-14 h-14 grid place-items-center rounded-2xl bg-sky-100 text-sky-700 shadow-sm">
+            <i data-lucide="languages" class="w-6 h-6"></i>
           </div>
-
-          <h2 class="mt-6 text-xl font-extrabold text-slate-900">
-            German Teachers
-          </h2>
-
+          <h2 class="mt-6 text-xl font-extrabold text-slate-900">German Teachers</h2>
           <p class="mt-3 text-sm leading-7 text-slate-600">
             Teach beginner levels (A1, A2) and help students build strong language foundations.
           </p>
@@ -206,17 +296,13 @@
     </div>
   </section>
 
-
   <!-- STRONG CTA SECTION -->
   <section class="px-4 pb-24 mx-auto max-w-6xl text-center">
     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-sky-600 via-sky-500 to-slate-100 px-8 py-14 text-white shadow-xl">
-
       <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,white,transparent_60%)]"></div>
 
       <div class="relative">
-        <h3 class="text-3xl font-black sm:text-4xl">
-          Ready to Inspire Change?
-        </h3>
+        <h3 class="text-3xl font-black sm:text-4xl">Ready to Inspire Change?</h3>
 
         <p class="max-w-2xl mx-auto mt-4 text-sm leading-8 text-white/90">
           Fill out the volunteer application form today and become part of the NavaRise mission.
@@ -225,30 +311,31 @@
 
         <div class="mt-8">
           <a id="volunteerApplyBtn2"
-             class="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-slate-900 bg-white rounded-xl hover:bg-slate-100 transition shadow-lg"
+             class="inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-slate-900 bg-white rounded-xl hover:bg-slate-100 transition shadow-lg"
              href="#" target="_blank" rel="noopener">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
             Apply via Google Form
           </a>
         </div>
       </div>
-
     </div>
   </section>
 
 </main>
 
-
-  <footer class="mt-10 text-white border-t border-sky-200/40 bg-gradient-to-b from-sky-900 via-sky-800 to-slate-950">
+<!-- Footer-->
+<footer class="mt-10 text-white border-t border-sky-200/40 bg-gradient-to-b from-sky-900 via-sky-800 to-slate-950">
   <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 
-
       <div class="space-y-3">
         <div class="flex items-center gap-2">
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10"><img src="/logo.jpg" alt="NavaRiseLogo" loading="lazy"></span>
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10">
+            <img src="/logo.jpg" alt="NavaRiseLogo" loading="lazy">
+          </span>
           <div>
             <div class="font-extrabold">NavaRise</div>
-            <div class="text-xs text-white/70 -mt-0.5">Education & Empowerment Center</div>
+            <div class="text-xs text-white/70 -mt-0.5">Education &amp; Empowerment Center</div>
           </div>
         </div>
 
@@ -257,7 +344,7 @@
         </p>
 
         <div class="flex items-center gap-3 text-white/80">
-          <!-- WhatsApp -->
+          
           <a
             href="https://whatsapp.com/channel/0029Vb6YBXQEKyZIn3Yhhj3q"
             class="inline-flex items-center justify-center transition rounded-lg h-9 w-9 bg-white/10 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
@@ -272,7 +359,7 @@
             </svg>
           </a>
 
-                  <!-- Instagram -->
+          
           <a
             href="https://instagram.com/nava_rise_"
             class="inline-flex items-center justify-center transition rounded-lg h-9 w-9 bg-white/10 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
@@ -288,6 +375,7 @@
             </svg>
           </a>
 
+          
           <a
             href="https://www.facebook.com/share/19zXXrZKkN/"
             class="inline-flex items-center justify-center transition rounded-lg h-9 w-9 bg-white/10 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
@@ -307,15 +395,23 @@
         <h4 class="font-bold">Policies</h4>
         <ul class="mt-4 space-y-2 text-sm text-white/80">
           <li><a class="hover:text-white" href="privacy.html">Privacy Policy</a></li>
-          <li><a class="hover:text-white" href="terms.html">Terms & Conditions</a></li>
+          <li><a class="hover:text-white" href="terms.html">Terms &amp; Conditions</a></li>
         </ul>
       </div>
 
       <div>
         <h4 class="font-bold">Contact</h4>
         <ul class="mt-4 space-y-2 text-sm text-white/80">
-          <li>Phone: <span dir="ltr">+93 730777233</span></li>
-          <li>Email: <span dir="ltr">contact.navarise@gmail.com</span></li>
+          <li class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-white/80"></i>
+            <span>Phone:</span>
+            <span dir="ltr">+93 730777233</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-white/80"></i>
+            <span>Email:</span>
+            <span dir="ltr">contact.navarise@gmail.com</span>
+          </li>
         </ul>
       </div>
 
@@ -334,46 +430,51 @@
 
     <div class="flex flex-col gap-3 pt-6 mt-10 text-xs border-t border-white/10 sm:flex-row sm:items-end sm:justify-between text-white/70">
       <div>© <span id="year">2026</span> NavaRise. All rights reserved.</div>
-     <div>
-    Developed by
-               <a href="https://www.linkedin.com/in/ahmad-hussaini-995042336/"
-       class="underline underline-offset-4 hover:text-white"
-       rel="noopener"
-       target="_blank">
-      Ahmad Ali
-    </a>
-     
-  </div>
+      <div>
+        Developed by
+        <a href="https://www.linkedin.com/in/ahmad-hussaini-995042336/"
+           class="underline underline-offset-4 hover:text-white"
+           rel="noopener"
+           target="_blank">
+          Ahmad Ali
+        </a>
+      </div>
     </div>
   </div>
 </footer>
 
+<script src="js/data.js"></script>
 
-  <script src="js/data.js"></script>
-
-  <script>
+<script>
   document.addEventListener("DOMContentLoaded", function () {
-  const url = window.NR_DATA?.googleForms?.volunteer || "#";
+    const url = window.NR_DATA?.googleForms?.volunteer || "#";
 
-  const btn1 = document.getElementById("volunteerApplyBtn");
-  if (btn1) btn1.href = url;
+    const btn1 = document.getElementById("volunteerApplyBtn");
+    if (btn1) btn1.href = url;
 
-  const btn2 = document.getElementById("volunteerApplyBtn2");
-  if (btn2) btn2.href = url;
-});
+    const btn2 = document.getElementById("volunteerApplyBtn2");
+    if (btn2) btn2.href = url;
+  });
 </script>
 
-   <script>
-    // Mobile menu
-    const btn = document.getElementById("menuBtn");
-    const nav = document.getElementById("mobileNav");
-    if (btn && nav) {
-      btn.addEventListener("click", () => {
-        const open = !nav.classList.contains("hidden");
-        nav.classList.toggle("hidden");
-        btn.setAttribute("aria-expanded", String(!open));
-      });
-    }
-  </script>
+<script>
+  // Mobile menu
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("mobileNav");
+  if (btn && nav) {
+    btn.addEventListener("click", () => {
+      const open = !nav.classList.contains("hidden");
+      nav.classList.toggle("hidden");
+      btn.setAttribute("aria-expanded", String(!open));
+    });
+  }
+</script>
+
+<!-- Lucide -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+
 </body>
 </html>

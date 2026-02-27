@@ -1,9 +1,8 @@
-
 function getPrograms() {
-  const all = (window.NR_DATA?.programs || []);
+  const all = window.NR_DATA?.programs || [];
   return {
-    completed: all.filter(p => p.status === "done"),
-    upcoming: all.filter(p => p.status === "soon")
+    completed: all.filter((p) => p.status === "done"),
+    upcoming: all.filter((p) => p.status === "soon"),
   };
 }
 
@@ -12,8 +11,8 @@ function badgeHtml(type, status) {
     type === "classes"
       ? `<span class="nr-badge nr-badge--class">Class</span>`
       : type === "webinars"
-      ? `<span class="nr-badge nr-badge--webinar">Webinar</span>`
-      : `<span class="nr-badge nr-badge--webinar">Contest</span>`;
+        ? `<span class="nr-badge nr-badge--webinar">Webinar</span>`
+        : `<span class="nr-badge nr-badge--webinar">Contest</span>`;
 
   const statusBadge =
     status === "done"
@@ -23,17 +22,40 @@ function badgeHtml(type, status) {
   return `<div class="flex flex-wrap gap-2">${typeBadge}${statusBadge}</div>`;
 }
 
+/* ---------- Lucide helpers ---------- */
+function programTypeIcon(type) {
+  
+  if (type === "classes")
+    return `<i data-lucide="graduation-cap" class="w-5 h-5"></i>`;
+  if (type === "webinars") return `<i data-lucide="mic" class="w-5 h-5"></i>`;
+  return `<i data-lucide="trophy" class="w-5 h-5"></i>`;
+}
+
+function statusIcon(status) {
+  if (status === "done")
+    return `<i data-lucide="badge-check" class="w-4 h-4"></i>`;
+  return `<i data-lucide="timer" class="w-4 h-4"></i>`;
+}
+
+function lucideRefresh() {
+  // Re-render icons after injecting HTML
+  if (window.lucide && typeof window.lucide.createIcons === "function") {
+    window.lucide.createIcons();
+  }
+}
 
 function programCard(program) {
   const isUpcoming = program.status === "soon";
 
   const forms = window.NR_DATA?.googleForms || {};
   const googleFormUrl =
-    program.form && forms[program.form] ? forms[program.form] : (forms.default || "#");
+    program.form && forms[program.form]
+      ? forms[program.form]
+      : forms.default || "#";
 
   // Upcoming -> Register (Google Form), Completed -> Details page
   const primaryLabel = isUpcoming ? "Register" : "Details";
-  const primaryHref  = isUpcoming
+  const primaryHref = isUpcoming
     ? googleFormUrl
     : `program-details.html?slug=${encodeURIComponent(program.slug)}`;
 
@@ -44,14 +66,7 @@ function programCard(program) {
       <div class="flex items-start justify-between gap-3">
         ${badgeHtml(program.type, program.status)}
         <div class="h-10 w-10 rounded-xl bg-slate-100 grid place-items-center text-slate-600" title="Icon">
-          ${
-  program.type === "classes"
-    ? "🎓"
-    : program.type === "webinars"
-    ? "🎙️"
-    : "🏆"
-}
-
+          ${programTypeIcon(program.type)}
         </div>
       </div>
 
@@ -67,24 +82,26 @@ function programCard(program) {
 
 function renderProgramsPage() {
   const completedGrid = document.getElementById("completedGrid");
-  const upcomingGrid  = document.getElementById("upcomingGrid");
+  const upcomingGrid = document.getElementById("upcomingGrid");
   if (!completedGrid || !upcomingGrid) return;
 
   const { completed, upcoming } = getPrograms();
   completedGrid.innerHTML = completed.map(programCard).join("");
-  upcomingGrid.innerHTML  = upcoming.map(programCard).join("");
+  upcomingGrid.innerHTML = upcoming.map(programCard).join("");
+
+  lucideRefresh();
 }
 
 function applyProgramsFilter(filterValue, query) {
   const cards = document.querySelectorAll("[data-type][data-title]");
   const q = (query || "").trim().toLowerCase();
 
-  cards.forEach(card => {
+  cards.forEach((card) => {
     const type = card.getAttribute("data-type");
     const title = card.getAttribute("data-title") || "";
-    const matchesType = (filterValue === "all") ? true : (type === filterValue);
+    const matchesType = filterValue === "all" ? true : type === filterValue;
     const matchesQuery = q ? title.includes(q) : true;
-    card.style.display = (matchesType && matchesQuery) ? "" : "none";
+    card.style.display = matchesType && matchesQuery ? "" : "none";
   });
 }
 
@@ -93,9 +110,9 @@ function bindProgramsUI() {
   const searchInput = document.getElementById("searchInput");
   let activeFilter = "all";
 
-  chips.forEach(chip => {
+  chips.forEach((chip) => {
     chip.addEventListener("click", () => {
-      chips.forEach(c => c.classList.remove("is-active"));
+      chips.forEach((c) => c.classList.remove("is-active"));
       chip.classList.add("is-active");
 
       activeFilter = chip.getAttribute("data-filter") || "all";
@@ -121,7 +138,7 @@ function renderProgramDetailsPage() {
   const host = document.getElementById("programDetails");
   if (!host) return;
 
-  const p = (window.NR_DATA?.programs || []).find(x => x.slug === slug);
+  const p = (window.NR_DATA?.programs || []).find((x) => x.slug === slug);
 
   if (!p) {
     host.innerHTML = `
@@ -137,15 +154,39 @@ function renderProgramDetailsPage() {
   }
 
   const meta = p.meta || {};
-  const outcomes = (p.outcomes || []).map(i => `<li class="leading-8 text-slate-700">• ${i}</li>`).join("");
+  const outcomes = (p.outcomes || [])
+    .map((i) => `<li class="leading-8 text-slate-700">• ${i}</li>`)
+    .join("");
+
+  const typeLabel =
+    p.type === "classes"
+      ? "Class"
+      : p.type === "webinars"
+        ? "Webinar"
+        : "Contest";
+
+  const typeIcon =
+    p.type === "classes"
+      ? `<i data-lucide="graduation-cap" class="w-4 h-4"></i>`
+      : p.type === "webinars"
+        ? `<i data-lucide="mic" class="w-4 h-4"></i>`
+        : `<i data-lucide="trophy" class="w-4 h-4"></i>`;
+
+  const statusLabel = p.status === "done" ? "Completed" : "Starting Soon";
 
   host.innerHTML = `
     <div class="mx-auto max-w-5xl">
       <div class="text-center">
         <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs text-slate-700">
-          ${p.type === "classes" ? "🎓 Class" : "🎙️ Webinar"}
+          <span class="inline-flex items-center gap-1.5">
+            ${typeIcon}
+            ${typeLabel}
+          </span>
           <span class="mx-1">|</span>
-          ${p.status === "done" ? "✅ Completed" : "⏳ Starting Soon"}
+          <span class="inline-flex items-center gap-1.5">
+            ${statusIcon(p.status)}
+            ${statusLabel}
+          </span>
         </div>
 
         <h1 class="mt-5 text-3xl sm:text-5xl font-black tracking-tight">${p.title}</h1>
@@ -157,10 +198,14 @@ function renderProgramDetailsPage() {
           <h2 class="text-lg font-extrabold">About This Program</h2>
           <p class="mt-3 text-sm text-slate-700 leading-8">${p.longDesc || ""}</p>
 
-          ${outcomes ? `
+          ${
+            outcomes
+              ? `
             <h3 class="mt-6 text-base font-extrabold">Outcomes</h3>
             <ul class="mt-2 text-sm">${outcomes}</ul>
-          ` : ""}
+          `
+              : ""
+          }
         </div>
 
         <aside class="nr-card">
@@ -169,9 +214,10 @@ function renderProgramDetailsPage() {
             <div class="flex justify-between"><span>Duration:</span><span class="font-bold">${meta.duration || "—"}</span></div>
             <div class="flex justify-between"><span>Level:</span><span class="font-bold">${meta.level || "—"}</span></div>
             <div class="flex justify-between"><span>Format:</span><span class="font-bold">${meta.format || "—"}</span></div>
-           <div class="flex justify-between"><span>${meta.participants ? "Participants:" : "Students:"}</span>
-            <span class="font-bold">${meta.participants || meta.students || "—"}</span></div>
-
+            <div class="flex justify-between">
+              <span>${meta.participants ? "Participants:" : "Students:"}</span>
+              <span class="font-bold">${meta.participants || meta.students || "—"}</span>
+            </div>
           </div>
 
           <div class="mt-6 space-y-2">
@@ -182,6 +228,8 @@ function renderProgramDetailsPage() {
       </div>
     </div>
   `;
+
+  lucideRefresh();
 }
 
 /* -------- Page Router -------- */

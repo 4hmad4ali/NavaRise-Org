@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -7,14 +6,14 @@
   <title>NavaRise | Donate</title>
 
   <!-- Favicon -->
- <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
-<link rel="shortcut icon" href="images/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
-<link rel="manifest" href="/manifest.webmanifest">
-<meta name="theme-color" content="#0f172a">
+  <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0f172a">
 
-   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,8 +24,7 @@
 </head>
 
 <body class="nr-grid nr-wash text-slate-900">
-  <!-- injected -->
- 
+
 <header class="sticky top-0 z-50 nr-header">
   <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 gap-3">
@@ -54,15 +52,15 @@
         <a href="donate.html"
            class="items-center hidden gap-2 px-3 py-2 text-sm font-semibold text-white transition rounded-lg sm:inline-flex bg-slate-900 hover:bg-slate-800">
           <span>Donate</span>
-          <span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-white/10">♥</span>
+          <span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-white/10">
+            <i data-lucide="heart" class="w-4 h-4"></i>
+          </span>
         </a>
 
         <button id="menuBtn"
                 class="inline-flex items-center justify-center p-2 transition rounded-lg md:hidden hover:bg-white/40"
                 aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+          <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
     </div>
@@ -79,267 +77,335 @@
 
       <a href="donate.html"
          class="inline-flex items-center justify-center w-full gap-2 px-3 py-2 mt-2 font-semibold text-white transition rounded-lg bg-slate-900 hover:bg-slate-800">
-        Donate ♥
+        Donate
+        <i data-lucide="heart" class="w-4 h-4"></i>
       </a>
     </div>
   </div>
 </header>
 
+<main>
 
-  <main>
-    <!-- Hero -->
-    <section class="px-4 pb-10 mx-auto max-w-7xl sm:px-6 lg:px-8 pt-14">
+  <!-- HERO (modern + icons) -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-sky-50 via-white to-white"></div>
+    <div class="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-sky-200/40 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-indigo-200/40 blur-3xl"></div>
+
+    <div class="relative px-4 pb-10 mx-auto max-w-7xl sm:px-6 lg:px-8 pt-14">
       <div class="text-center">
-        <div class="inline-flex items-center gap-2 px-3 py-1 text-xs border rounded-full border-slate-200 bg-white/70 text-slate-700">
-          <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold rounded-full bg-white/70 backdrop-blur border border-sky-200 text-slate-700">
+          <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-sky-600/10 text-sky-700">
+            <i data-lucide="heart-handshake" class="w-3.5 h-3.5"></i>
+          </span>
           Donate
+          <span class="inline-flex items-center gap-1 text-sky-700">
+            <span class="h-1.5 w-1.5 rounded-full bg-sky-500 animate-pulse"></span>
+            Support education
+          </span>
         </div>
 
         <h1 class="mt-5 text-3xl font-black tracking-tight sm:text-5xl">
-         <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-600">With your support,</span>  education continues
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-600">
+            With your support,
+          </span>
+          education continues
         </h1>
 
         <p class="max-w-3xl mx-auto mt-3 text-sm leading-8 sm:text-base text-slate-600">
           We don’t currently offer online payments. You can submit a donation pledge, and our team will contact you
           with payment details or the best available method.
         </p>
-      </div>
-    </section>
 
-    <!-- Main layout -->
-    <section class="px-4 pb-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div class="grid gap-6 lg:grid-cols-2 lg:items-start">
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="#pledge"
+             class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800 transition shadow-sm">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            Submit a pledge
+          </a>
+          <a href="#impact"
+             class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition">
+            <i data-lucide="badge-check" class="w-4 h-4"></i>
+            See impact
+          </a>
+        </div>
 
-        <!-- Left: Pledge form (glass) -->
-        <div class="p-6 nr-glass sm:p-8">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h2 class="text-xl font-black sm:text-2xl">Donation Pledge</h2>
-              <p class="mt-2 text-sm leading-7 text-slate-600">
-                This form sends your pledge to the NavaRise team. After you submit, we’ll coordinate with you.
-              </p>
-            </div>
-            <div class="grid w-10 h-10 rounded-xl bg-slate-100 place-items-center text-slate-600">♥</div>
+        <div class="mt-10 flex flex-wrap justify-center gap-3">
+          <div class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 backdrop-blur px-4 py-2 text-sm text-slate-700">
+            <i data-lucide="book-open" class="w-4 h-4 text-sky-700"></i>
+            Materials & books
           </div>
+          <div class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 backdrop-blur px-4 py-2 text-sm text-slate-700">
+            <i data-lucide="monitor-play" class="w-4 h-4 text-sky-700"></i>
+            Classes & webinars
+          </div>
+          <div class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 backdrop-blur px-4 py-2 text-sm text-slate-700">
+            <i data-lucide="wifi" class="w-4 h-4 text-sky-700"></i>
+            Tools & internet
+          </div>
+        </div>
 
-          <!-- Quick amounts -->
-          <div class="mt-6">
-            <div class="mb-3 text-sm font-extrabold text-slate-700">Suggested Amount</div>
-            <div class="flex flex-wrap gap-2">
-              <button type="button" class="nr-tier" data-amount="10">10</button>
-              <button type="button" class="nr-tier" data-amount="25">25</button>
-              <button type="button" class="nr-tier" data-amount="50">50</button>
-              <button type="button" class="nr-tier" data-amount="100">100</button>
-              <button type="button" class="nr-tier" data-amount="200">200</button>
-            </div>
-            <p class="mt-2 text-xs text-slate-500">
-              (Just a suggestion — you can enter any amount you prefer.)
+      </div>
+    </div>
+  </section>
+
+  <!-- Main layout -->
+  <section id="pledge" class="px-4 pb-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="grid gap-6 lg:grid-cols-2 lg:items-start">
+
+      <!-- Left: Pledge form (glass) -->
+      <div class="p-6 nr-glass sm:p-8">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h2 class="text-xl font-black sm:text-2xl">Donation Pledge</h2>
+            <p class="mt-2 text-sm leading-7 text-slate-600">
+              This form sends your pledge to the NavaRise team. After you submit, we’ll coordinate with you.
             </p>
           </div>
+          <div class="grid w-10 h-10 rounded-xl bg-slate-100 place-items-center text-slate-600">
+            <i data-lucide="heart" class="w-5 h-5"></i>
+          </div>
+        </div>
 
-          <form
-            id="donateForm"
-            class="mt-6 space-y-4"
-            action="https://formspree.io/f/xkozdyen"
-            method="POST"
-          >
-            <div class="grid gap-4 sm:grid-cols-2">
-              <div>
-                <label class="block mb-2 text-sm font-bold text-slate-700">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  class="w-full p-3 rounded-lg nr-glass-dark focus:outline-none focus:ring-2 focus:ring-sky-300"
-                  placeholder="Your name"
-                />
-              </div>
+        <!-- Quick amounts -->
+        <div class="mt-6">
+          <div class="mb-3 text-sm font-extrabold text-slate-700">Suggested Amount</div>
+          <div class="flex flex-wrap gap-2">
+            <button type="button" class="nr-tier" data-amount="10">10</button>
+            <button type="button" class="nr-tier" data-amount="25">25</button>
+            <button type="button" class="nr-tier" data-amount="50">50</button>
+            <button type="button" class="nr-tier" data-amount="100">100</button>
+            <button type="button" class="nr-tier" data-amount="200">200</button>
+          </div>
+          <p class="mt-2 text-xs text-slate-500">
+            (Just a suggestion — you can enter any amount you prefer.)
+          </p>
+        </div>
 
-              <div>
-                <label class="block mb-2 text-sm font-bold text-slate-700">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  dir="ltr"
-                  class="w-full p-3 rounded-lg nr-glass-dark focus:outline-none focus:ring-2 focus:ring-sky-300"
-                  placeholder="example@email.com"
-                />
-              </div>
-            </div>
-
-            <div class="grid gap-4 sm:grid-cols-3">
-              <div class="sm:col-span-2">
-                <label class="block mb-2 text-sm font-bold text-slate-700">Donation Amount</label>
-                <input
-                  id="donationAmount"
-                  type="number"
-                  min="1"
-                  name="amount"
-                  required
-                  class="w-full p-3 rounded-lg nr-glass-dark focus:outline-none focus:ring-2 focus:ring-sky-300"
-                  placeholder="e.g., 50"
-                />
-              </div>
-
-              <div>
-                <label class="block mb-2 text-sm font-bold text-slate-700">Currency</label>
-                <select
-                  name="currency"
-                  class="w-full p-3 rounded-lg nr-glass-dark focus:outline-none focus:ring-2 focus:ring-sky-300"
-                >
-                  <option value="EUR">EUR</option>
-                  <option value="USD">USD</option>
-                  <option value="AFN">AFN</option>
-                </select>
-              </div>
-            </div>
-
+        <form
+          id="donateForm"
+          class="mt-6 space-y-4"
+          action="https://formspree.io/f/xkozdyen"
+          method="POST"
+        >
+          <div class="grid gap-4 sm:grid-cols-2">
             <div>
-              <label class="block mb-2 text-sm font-bold text-slate-700">Donation Type</label>
-              <div class="grid gap-2 sm:grid-cols-2">
-                <label class="nr-radio">
-                  <input type="radio" name="frequency" value="One-time" checked>
-                  <span>One-time</span>
-                </label>
-                <label class="nr-radio">
-                  <input type="radio" name="frequency" value="Monthly">
-                  <span>Monthly</span>
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <label class="block mb-2 text-sm font-bold text-slate-700">Message (optional)</label>
-              <textarea
-                rows="4"
-                name="message"
+              <label class="block mb-2 text-sm font-bold text-slate-700">Name</label>
+              <input
+                type="text"
+                name="name"
+                required
                 class="w-full p-3 rounded-lg nr-glass-dark focus:outline-none focus:ring-2 focus:ring-sky-300"
-                placeholder="If you’d like to add a note, write it here..."
-              ></textarea>
+                placeholder="Your name"
+              />
             </div>
 
-            <!-- Honeypot anti-spam -->
-            <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
-
-            <!-- Subject -->
-            <input type="hidden" name="_subject" value="New NavaRise Donation Pledge" />
-
-            <button
-              type="submit"
-              class="w-full py-3 font-extrabold transition border rounded-lg border-sky-200 bg-sky-500/20 text-slate-900 hover:bg-sky-500/30"
-            >
-              Submit Pledge
-            </button>
-
-            <p id="donateStatus" class="mt-2 text-sm"></p>
-          </form>
-
-          <p class="mt-6 text-xs leading-7 text-slate-500">
-            *For actual payment, after we receive your message, we’ll send you the payment details.
-          </p>
-        </div>
-
-        <!-- Right: Trust / Where funds go / FAQ -->
-        <div class="space-y-4">
-          <div class="nr-card">
-            <div class="flex items-start justify-between gap-3">
-              <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold rounded-full bg-sky-50 text-sky-700">
-                  <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
-                  Where your donation goes
-                </div>
-                <ul class="mt-4 space-y-2 text-sm leading-7 text-slate-700">
-                  <li>• Learning materials and books</li>
-                  <li>• Supporting classes and webinars</li>
-                  <li>• Educational tools (internet / printing)</li>
-                  <li>• Supporting instructors and volunteers</li>
-                </ul>
-              </div>
-              <div class="grid w-10 h-10 rounded-xl bg-slate-100 place-items-center text-slate-600">📌</div>
+            <div>
+              <label class="block mb-2 text-sm font-bold text-slate-700">Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                dir="ltr"
+                class="w-full p-3 rounded-lg nr-glass-dark focus:outline-none focus:ring-2 focus:ring-sky-300"
+                placeholder="example@email.com"
+              />
             </div>
           </div>
 
-          <div class="nr-card">
-            <div class="flex items-start justify-between gap-3">
-              <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold rounded-full bg-sky-50 text-sky-700">
-                  <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
-                  Transparency
-                </div>
-                <p class="mt-3 text-sm leading-8 text-slate-700">
-                  You can visit the “About Us” page for leadership information and reports.
-                  
-                </p>
-                <div class="flex gap-2 mt-4">
-                  <a href="about.html" class="nr-btn nr-btn--primary">About NavaRise</a>
-                  <a href="programs.html" class="nr-btn">Programs</a>
-                </div>
-              </div>
-              <div class="grid w-10 h-10 rounded-xl bg-slate-100 place-items-center text-slate-600">🔎</div>
+          <div class="grid gap-4 sm:grid-cols-3">
+            <div class="sm:col-span-2">
+              <label class="block mb-2 text-sm font-bold text-slate-700">Donation Amount</label>
+              <input
+                id="donationAmount"
+                type="number"
+                min="1"
+                name="amount"
+                required
+                class="w-full p-3 rounded-lg nr-glass-dark focus:outline-none focus:ring-2 focus:ring-sky-300"
+                placeholder="e.g., 50"
+              />
+            </div>
+
+            <div>
+              <label class="block mb-2 text-sm font-bold text-slate-700">Currency</label>
+              <select
+                name="currency"
+                class="w-full p-3 rounded-lg nr-glass-dark focus:outline-none focus:ring-2 focus:ring-sky-300"
+              >
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="AFN">AFN</option>
+              </select>
             </div>
           </div>
 
-          <div class="nr-card">
-            <div class="flex items-start justify-between gap-3">
-              <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold rounded-full bg-sky-50 text-sky-700">
-                  <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
-                  FAQ
-                </div>
-
-                <div class="mt-4 space-y-3">
-                  <details class="nr-faq">
-                    <summary>Do you offer online payments?</summary>
-                    <p>Not yet. This page collects donation pledges so we can send you payment details.</p>
-                  </details>
-                  <details class="nr-faq">
-                    <summary>Can I donate monthly?</summary>
-                    <p>Yes — choose “Monthly” and enter your preferred amount.</p>
-                  </details>
-                  <details class="nr-faq">
-                    <summary>How quickly will you respond?</summary>
-                    <p>We usually review and respond as soon as possible.</p>
-                  </details>
-                </div>
-              </div>
-              <div class="grid w-10 h-10 rounded-xl bg-slate-100 place-items-center text-slate-600">❓</div>
+          <div>
+            <label class="block mb-2 text-sm font-bold text-slate-700">Donation Type</label>
+            <div class="grid gap-2 sm:grid-cols-2">
+              <label class="nr-radio">
+                <input type="radio" name="frequency" value="One-time" checked>
+                <span>One-time</span>
+              </label>
+              <label class="nr-radio">
+                <input type="radio" name="frequency" value="Monthly">
+                <span>Monthly</span>
+              </label>
             </div>
           </div>
-        </div>
 
+          <div>
+            <label class="block mb-2 text-sm font-bold text-slate-700">Message (optional)</label>
+            <textarea
+              rows="4"
+              name="message"
+              class="w-full p-3 rounded-lg nr-glass-dark focus:outline-none focus:ring-2 focus:ring-sky-300"
+              placeholder="If you’d like to add a note, write it here..."
+            ></textarea>
+          </div>
+
+          <!-- Honeypot -->
+          <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
+
+          <!-- Subject -->
+          <input type="hidden" name="_subject" value="New NavaRise Donation Pledge" />
+
+          <button
+            type="submit"
+            class="w-full py-3 font-extrabold transition border rounded-lg border-sky-200 bg-sky-500/20 text-slate-900 hover:bg-sky-500/30 inline-flex items-center justify-center gap-2"
+          >
+            <i data-lucide="send" class="w-4 h-4"></i>
+            Submit Pledge
+          </button>
+
+          <p id="donateStatus" class="mt-2 text-sm"></p>
+        </form>
+
+        <p class="mt-6 text-xs leading-7 text-slate-500">
+          *For actual payment, after we receive your message, we’ll send you the payment details.
+        </p>
       </div>
-    </section>
 
-    <!-- Soft CTA -->
-    <section class="px-4 pb-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div class="nr-cta">
-        <div class="text-center nr-cta-inner">
-          <h3 class="text-2xl font-black text-white sm:text-3xl">Want to volunteer?</h3>
-          <p class="max-w-2xl mx-auto mt-3 leading-8 text-white/90">
-            Support isn’t only financial — if you can teach or contribute media/technical skills, we’d love to collaborate.
-          </p>
-          <div class="flex flex-col items-center justify-center gap-3 mt-6 sm:flex-row">
-            <a href="contact.html" class="nr-btn-white">Contact</a>
-            <a href="volunteer.html" class="nr-btn-ghost">Become Our Volunteer</a>
+      <!-- Right: Trust / Where funds go / FAQ -->
+      <div id="impact" class="space-y-4">
+        <div class="nr-card">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold rounded-full bg-sky-50 text-sky-700">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+                Where your donation goes
+              </div>
+              <ul class="mt-4 space-y-2 text-sm leading-7 text-slate-700">
+                <li>• Learning materials and books</li>
+                <li>• Supporting classes and webinars</li>
+                <li>• Educational tools (internet / printing)</li>
+                <li>• Supporting instructors and volunteers</li>
+              </ul>
+            </div>
+            <div class="grid w-10 h-10 rounded-xl bg-slate-100 place-items-center text-slate-600">
+              <i data-lucide="pin" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="nr-card">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold rounded-full bg-sky-50 text-sky-700">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+                Transparency
+              </div>
+              <p class="mt-3 text-sm leading-8 text-slate-700">
+                You can visit the “About Us” page for leadership information and reports.
+              </p>
+              <div class="flex gap-2 mt-4">
+                <a href="about.html" class="nr-btn nr-btn--primary inline-flex items-center gap-2">
+                  <i data-lucide="info" class="w-4 h-4"></i>
+                  About NavaRise
+                </a>
+                <a href="programs.html" class="nr-btn inline-flex items-center gap-2">
+                  <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                  Programs
+                </a>
+              </div>
+            </div>
+            <div class="grid w-10 h-10 rounded-xl bg-slate-100 place-items-center text-slate-600">
+              <i data-lucide="search" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="nr-card">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold rounded-full bg-sky-50 text-sky-700">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+                FAQ
+              </div>
+
+              <div class="mt-4 space-y-3">
+                <details class="nr-faq">
+                  <summary>Do you offer online payments?</summary>
+                  <p>Not yet. This page collects donation pledges so we can send you payment details.</p>
+                </details>
+                <details class="nr-faq">
+                  <summary>Can I donate monthly?</summary>
+                  <p>Yes — choose “Monthly” and enter your preferred amount.</p>
+                </details>
+                <details class="nr-faq">
+                  <summary>How quickly will you respond?</summary>
+                  <p>We usually review and respond as soon as possible.</p>
+                </details>
+              </div>
+            </div>
+            <div class="grid w-10 h-10 rounded-xl bg-slate-100 place-items-center text-slate-600">
+              <i data-lucide="help-circle" class="w-5 h-5"></i>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
 
-  <!-- injected -->
-  <footer class="mt-10 text-white border-t border-sky-200/40 bg-gradient-to-b from-sky-900 via-sky-800 to-slate-950">
+    </div>
+  </section>
+
+  <!-- Soft CTA -->
+  <section class="px-4 pb-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="nr-cta">
+      <div class="text-center nr-cta-inner">
+        <h3 class="text-2xl font-black text-white sm:text-3xl">Want to volunteer?</h3>
+        <p class="max-w-2xl mx-auto mt-3 leading-8 text-white/90">
+          Support isn’t only financial — if you can teach or contribute media/technical skills, we’d love to collaborate.
+        </p>
+        <div class="flex flex-col items-center justify-center gap-3 mt-6 sm:flex-row">
+          <a href="contact.html" class="nr-btn-white inline-flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            Contact
+          </a>
+          <a href="volunteer.html" class="nr-btn-ghost inline-flex items-center gap-2">
+            <i data-lucide="users" class="w-4 h-4"></i>
+            Become Our Volunteer
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer (social SVG unchanged, phone/mail uses Lucide) -->
+<footer class="mt-10 text-white border-t border-sky-200/40 bg-gradient-to-b from-sky-900 via-sky-800 to-slate-950">
   <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 
-
       <div class="space-y-3">
         <div class="flex items-center gap-2">
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10"><img src="/logo.jpg" alt="NavaRiseLogo" loading="lazy"></span>
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10">
+            <img src="/logo.jpg" alt="NavaRiseLogo" loading="lazy">
+          </span>
           <div>
             <div class="font-extrabold">NavaRise</div>
-            <div class="text-xs text-white/70 -mt-0.5">Education & Empowerment Center</div>
+            <div class="text-xs text-white/70 -mt-0.5">Education &amp; Empowerment Center</div>
           </div>
         </div>
 
@@ -348,7 +414,7 @@
         </p>
 
         <div class="flex items-center gap-3 text-white/80">
-          <!-- WhatsApp -->
+          
           <a
             href="https://whatsapp.com/channel/0029Vb6YBXQEKyZIn3Yhhj3q"
             class="inline-flex items-center justify-center transition rounded-lg h-9 w-9 bg-white/10 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
@@ -363,7 +429,7 @@
             </svg>
           </a>
 
-                  <!-- Instagram -->
+          
           <a
             href="https://instagram.com/nava_rise_"
             class="inline-flex items-center justify-center transition rounded-lg h-9 w-9 bg-white/10 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
@@ -398,15 +464,23 @@
         <h4 class="font-bold">Policies</h4>
         <ul class="mt-4 space-y-2 text-sm text-white/80">
           <li><a class="hover:text-white" href="privacy.html">Privacy Policy</a></li>
-          <li><a class="hover:text-white" href="terms.html">Terms & Conditions</a></li>
+          <li><a class="hover:text-white" href="terms.html">Terms &amp; Conditions</a></li>
         </ul>
       </div>
 
       <div>
         <h4 class="font-bold">Contact</h4>
         <ul class="mt-4 space-y-2 text-sm text-white/80">
-          <li>Phone: <span dir="ltr">+93 </span></li>
-          <li>Email: <span dir="ltr">contact.navarise@gmail.com</span></li>
+          <li class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-white/80"></i>
+           
+            <span dir="ltr">+93 730777233</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-white/80"></i>
+            
+            <span dir="ltr">contact.navarise@gmail.com</span>
+          </li>
         </ul>
       </div>
 
@@ -417,7 +491,7 @@
           <li><a class="hover:text-white" href="about.html">About Us</a></li>
           <li><a class="hover:text-white" href="programs.html">Programs</a></li>
           <li><a class="hover:text-white" href="teachers.html">Instructors</a></li>
-          <li><a class="hover:text-white" href="articles.html">Articles</a></li> 
+          <li><a class="hover:text-white" href="articles.html">Articles</a></li>
           <li><a class="hover:text-white" href="contact.html">Contact</a></li>
           <li><a class="hover:text-white" href="donate.html">Donate</a></li>
         </ul>
@@ -426,34 +500,40 @@
 
     <div class="flex flex-col gap-3 pt-6 mt-10 text-xs border-t border-white/10 sm:flex-row sm:items-end sm:justify-between text-white/70">
       <div>© <span id="year">2026</span> NavaRise. All rights reserved.</div>
-     <div>
-    Developed by
-        
-      <a href="https://www.linkedin.com/in/ahmad-hussaini-995042336/"
-       class="underline underline-offset-4 hover:text-white"
-       rel="noopener"
-       target="_blank">
-      Ahmad Ali
-    </a>
-  </div>
+      <div>
+        Developed by
+        <a href="https://www.linkedin.com/in/ahmad-hussaini-995042336/"
+           class="underline underline-offset-4 hover:text-white"
+           rel="noopener"
+           target="_blank">
+          Ahmad Ali
+        </a>
+      </div>
     </div>
   </div>
 </footer>
 
+<script src="js/main.js"></script>
+<script src="js/forms.js"></script>
 
-  <script src="js/main.js"></script>
-  <script src="js/forms.js"></script>
-   <script>
-    // Mobile menu
-    const btn = document.getElementById("menuBtn");
-    const nav = document.getElementById("mobileNav");
-    if (btn && nav) {
-      btn.addEventListener("click", () => {
-        const open = !nav.classList.contains("hidden");
-        nav.classList.toggle("hidden");
-        btn.setAttribute("aria-expanded", String(!open));
-      });
-    }
-  </script>
+<script>
+  // Mobile menu
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("mobileNav");
+  if (btn && nav) {
+    btn.addEventListener("click", () => {
+      const open = !nav.classList.contains("hidden");
+      nav.classList.toggle("hidden");
+      btn.setAttribute("aria-expanded", String(!open));
+    });
+  }
+</script>
+
+<!-- Lucide -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+
 </body>
 </html>
